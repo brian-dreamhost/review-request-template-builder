@@ -21,9 +21,23 @@ export default function App() {
   const [channel, setChannel] = useState('email')
   const [followUpEnabled, setFollowUpEnabled] = useState(false)
 
+  const fillTestData = () => {
+    setBusinessData({
+      businessName: 'Sunrise Family Dental',
+      industry: 'healthcare',
+      reviewLink: 'https://g.page/r/sunrise-family-dental/review',
+      customerName: 'Sarah Johnson',
+      service: 'teeth cleaning and whitening consultation',
+    })
+    setScenario('just-completed')
+    setTone('friendly')
+    setChannel('email')
+    setFollowUpEnabled(true)
+  }
+
   return (
     <div className="bg-abyss bg-glow bg-grid min-h-screen">
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8 sm:py-12 animate-fadeIn">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-4 py-8 sm:py-12 animate-fadeIn">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-galactic">
           <a href="https://seo-tools-tau.vercel.app/" className="text-azure hover:text-white transition-colors">Free Tools</a>
@@ -49,6 +63,16 @@ export default function App() {
             </div>
           </div>
         </header>
+
+        <div className="flex justify-end mb-4">
+          <button
+            type="button"
+            onClick={fillTestData}
+            className="px-3 py-1.5 text-xs font-mono bg-prince/20 text-prince border border-prince/30 rounded hover:bg-prince/30 transition-colors focus:outline-none focus:ring-2 focus:ring-prince focus:ring-offset-2 focus:ring-offset-abyss"
+          >
+            Fill Test Data
+          </button>
+        </div>
 
         {/* Main content */}
         <div className="space-y-6">
